@@ -1,0 +1,62 @@
+body{
+   margin:20px;
+   display:flex;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.card{
+    display:flex;
+    justify-content:space-around;
+    background-color:rgba(240, 122, 12, 0.694);
+    padding:20px;
+    border:5px solid white;
+    border-bottom:4px solid rgb(163, 53, 6);
+    border-radius:10px;
+    margin: 0px auto 0px auto;/*the first value 
+    is for the top, the second for the right, the
+     third for the bottom and the last for the left,
+      so in this case we are saying that we want 
+      0px margin at the top and bottom and auto 
+      margin at the right and left, which means that 
+      it will take whatever space is available at the 
+      right and left of the element and divide it 
+      equally to make it at the center, it can also be just
+      0px auto, the first for the top and bottom adn the last
+      for the right and left*/
+    width:400px;
+    height:100px;
+    border-radius:10px;
+}
+.content{
+    text-align:center;
+    font-size:15px;
+    color:black;
+    margin-left:10px;
+}
+.italic{
+    font-style:italic;
+}/*this class is called a utility class
+ because it is used to apply a specific 
+ style to an element, and it is not used
+  to style a specific element, so we 
+  can use it on any element we want 
+  to apply the italic style to*/
+  /*margin-left:1px + margin-right:1px + margin-top:1px + margin-bottom:1px = margin:1px,
+   margin-left:1px + margin-right:2px + margin-top:3px + margin-bottom:4px = 
+   margin: 3px 2px 4px 1px, it starts from top and then go clockwise(top,right,bottom, left)
+   also if top and bottom, right and left have the same values we can do margin: 40px auto;
+   with the first one is for the top and bottom(manages the vertical lines or y axis)
+   and the next for the horizontal line(x axis)*/
+   /*coolers.com  ---for colors*/
+   /*web safe fonts-- are fonts that are available
+    on all computers, so if we use them we can be sure 
+    that the font will be displayed correctly on all 
+    computers, but if we use a font that is not web safe, 
+    it may not be displayed correctly on some computers,
+     so we can use a web safe font as a fallback font, so
+      if the first font is not available, the browser will 
+      use the fallback font, foe example in font-family:Verdana, Geneva, Tahoma, sans-serif; 
+      all the font families other than verdana are fallback fonts, teh next will be used
+      if the former is not available */
+/*personalization: border, layout,font-family, color with coolor.com,shadows,hover effects, animations*/
+/*try to commit the mind bridge zip or normal file to github and try deploying*/
+/*3:20 at the full stack web development tutor at fre code camp*/

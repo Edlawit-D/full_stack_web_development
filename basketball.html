@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="basketball.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="home">
+                <h3>HOME</h3>
+                <h1 id="hscore">0</h1>
+                <div class="button">
+                    <button onclick="plus1() + leader()">+1</button>
+                    <button onclick="plus2() + leader()">+2</button>
+                    <button onclick="plus3() + leader()">+3</button>
+                </div>
+            </div>
+            <div id="guest">
+                <h3 >GUEST</h3>
+                <h1 id="gscore">0</h1>
+                <div class="button">
+                    <button onclick="plus11() + leader()">+1</button>
+                    <button onclick="plus22() + leader()">+2</button>
+                    <button onclick="plus33() + leader()">+3</button>
+                </div>
+            </div>
+        </div>
+        <p id="leader"></p>
+        <div id="new"><button id="newgame" onclick="newround()">New GAME</button></div>
+        <script src="basketball.js"></script>
+    </body>
+</html>

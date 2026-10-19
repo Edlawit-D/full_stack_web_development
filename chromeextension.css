@@ -1,0 +1,52 @@
+body{
+    margin:0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;/*when the app is being used, google will know that we want our apps 
+    minimum width to be 400px, so it wont be minimized any less than 400px when it is opened 
+    other wise the input button will extend far morethan the displayed part of it, there fore 
+    we do this to let the browser know we want the minimum sixe of our app to be 400px*/
+}
+input{
+    padding: 10px;
+    size:cover;
+    display:block;
+    width:100%;
+    margin-bottom: 4px;
+    height:30px;
+    border: 1.5px solid rgb(105, 147, 41) ;
+    box-sizing: border-box;/*if we dont do so it will take width=100%+(10px+10px--paddings) and it will take space more than the displayed screen*/
+}
+#input-btn{
+    background-color:rgb(105, 147, 41);
+    border:1.5px solid rgb(105, 147, 41);
+    width:150px;
+    font-weight:bolder;
+    color:white;
+    padding: 10px 10px 10px 10px;
+}
+#save-tab{
+    background-color:rgb(105, 147, 41);
+    border:1.5px solid rgb(105, 147, 41);
+    width:150px;
+    font-weight:bolder;
+    color:white;
+    padding: 10px 10px 10px 10px;
+}
+ul{
+    list-style: none;
+    padding-left:0px;
+    padding-top:20px;
+}
+li{
+    padding-bottom:5px;
+}
+li a {/*since the anchore has an id we can use its id and do #link, or else we could do li a{} instead */
+    color:rgb(105, 147, 41);
+}
+#delete-btn{
+    color:rgb(105, 147, 41);;
+    font-weight:bolder;
+    border:1.5px solid rgb(105, 147, 41);
+    padding: 10px 30px 10px 30px;
+}

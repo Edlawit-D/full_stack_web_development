@@ -1,0 +1,41 @@
+/* Apply the image and settings to the entire webpage background */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  
+  /* Add your background image here */
+  background-image: url('Ethiopia.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps image fixed while scrolling */
+}
+
+/* Create the light layer directly over the body background */
+body::before {
+  content: "";/*tells that this ghost element has no content,
+   but still force to render visually on teh screen.*/
+  position: absolute;
+  /*unlocks the element from standard text flow, 
+  alowing it to float freely anywhere on the top of the page.*/
+  top: 0;
+  left: 0;/*the last line and this line will make the top left 
+  corner of the sheet to be with the topleft corner of the body*/
+  width: 100%;
+  height: 100%;
+  /*the last two lines make it cover all the page 100$*/
+  background-color: rgba(79, 25, 106, 0.7); /* 0.7 makes it very light. also the color can be changed like it is purple in this one.
+  Lower it for a darker image. it controls the opacity like 70% solid white and 30% see-through */
+  z-index: 1;/*puts the white filter at the 1st layer*/
+}
+
+/* Keeps your content floating safely above the lightened background */
+.page-content {
+  position: relative;/*gives the content or the text the power to use depth settings(layers), so that 
+  it will not hide under the white sheet(filter) cause it can be at whatever layer we want it to be*/
+  z-index: 2;/*make the content at the 2nd layer, so that it wont be hiden inside the white filter*/
+  padding: 40px;
+  font-family: sans-serif;
+  color: #222222; /* Dark text color stands out perfectly */
+}

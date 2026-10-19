@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="counter.css">
+    </head>
+    <body>
+        <div class="page-content">
+            <h1>people entered</h1>
+            <h2 id="count">0</h2>
+             <!--the next line(<script>..........</script>) is actually a javascript code, as 
+                    we can style the website insite the html or else in a css file, 
+                    it applies for javascript. in the line, document refers to the 
+                    html document and then we sya get element by id and we entered 
+                    the id we wanted and then we changed the innner text from 0 to 5,
+                    but instead, its better to have a javascript file called counter.js -->
+            <!--<script>
+                document.getElementById("count").innerText = 5
+            </script>-->
+            <script src="counter.js" defer></script><!--to link the javascript file and the html file-->
+            <!--here, the use of the word defer is to tel the browser run the script elemetn after all the html pages are loaded which would avoid type and reference errors if u dont want using the word defer, u can move the line of script elemetn to the bottom so tht other contents of the page will get run before the script element-->
+            <button id="increment" onclick="increment()">INCREEMENT</button>
+            <button id="savebtn" onclick="save() + set()">SAVE</button>
+            <p id="welcomeEl"></p>
+            <p id="save-el">previous entries: </p>
+        </div> 
+    </body>
+</html>

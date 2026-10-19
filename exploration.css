@@ -1,0 +1,59 @@
+/*Unsplash-- for background images*/
+/*google fonts(fonts.google.com or just search the font we want
+in this case sifi google font--- for space ish font) 
+are used when we want a font other
+than the web safe fonts, then click on the font u choose which is u
+select and then see how to use it right at the site */
+/*there are some fonts still not available on the google fonts, there are other
+sites, like 1001fonts.com and others, for example we can search a film called god father
+sothat we can get the font used at the tittle of the film*/
+/*to apply whatever font we want to use, first we should download it and then drag and drop the
+ttf file to the project folder we want and then we should use the @font-face rule to apply it, 
+and then we can use it in the font-family property, the example is in teh 1001font.html and 1001font.css files*/
+/*use giphy.com to have dynamic images in our site like the one in this folder galaxy.webp
+webp is the data type we use for it and it is like png and others but is more like GIFs we use in chats*/
+/*we can use links for the static or dynamic images to refer in our code which we got in websites like the ones I mentioned earlier*/ 
+/*in addition,we can use coolors.com to generate color palletes based on an image we can choose to "choose pallette from an image" 
+then upload an image or the gif, then few more steps and then we can export and save the palletes and use the colors in the site 
+like in this one per(the teacher) used light blue color for the letters*/  
+.hero{
+    background-image: url("dynamicspace.gif");/*https://giphy.com/explore/space pasting the link can also be done but saving and 
+    refering the gif as a normal image is the best practice according to free code camp*/
+    background-size: cover;/*the backgound will cover the same
+    width as the browser, so when we inimize the browser, it will
+    fit*/
+    padding: 200px 40px;/*10px 0 40px 0  can also be applied*/
+    font-size:larger;
+}
+h1{
+    text-shadow: 0px 0px 4px black;
+    /*here is the way we use to make a little shadow around the text(each letters), the first value
+    is how much we want to push the shadow to the right, the next is how much we 
+    want to push downward and third, how much blur effect we want around the text and the last
+    what color shadow we want to apply*/
+}
+body{
+    font-family: "Orbitron", sans-serif;
+    color: #82a5ca;
+    text-align: center;
+    margin:0;/*none=default value of margin which is a little margin,
+    0 means no margin at all*/
+}
+.botton{
+    font-family: "Orbitron", sans-serif;
+    /*buttons do not inherit font families, so we should apply
+    the code in here as well or do font-family:"inherit"*/
+    padding:5px 10px;
+    font-weight: bolder;/* font-weight can also take numerical values*/
+    background-color: white;/*background:white  would also work*/
+    border:none;/*it is usefull cause it would have 
+    border by default*/
+    color:#82a5ca;
+}
+.underline{
+    /*text-decoration: underline;*/
+    border-bottom: 5px solid white;
+}
+#logo{
+    width:100px;
+}

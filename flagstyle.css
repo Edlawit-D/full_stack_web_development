@@ -1,0 +1,27 @@
+body{/*the diffolt margin is 8px
+    margin means the space around an eleent*/
+    margin:0px;
+}
+.red{
+    background-color:red;
+    width:100%;
+    height:33.33%;
+    margin-bottom:100px;
+}
+/*the margin bottom of class red and the
+ margin-top of class blue collpse, whenever
+  these kind of things happen the largest one 
+  will over take the smaller one therefore in
+  this case theere will be 100px distance between the two*/
+.blue{
+    background-color:blue;
+    width:100%;
+    height:33.33%;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.green{
+    background-color:green;
+    width:100%;
+    height:33.33%;
+}

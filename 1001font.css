@@ -1,0 +1,10 @@
+@font-face {
+    src: url(TheGodfather-v2.ttf);
+    font-family: "The Godfather";
+}
+h1{
+    font-family: "The Godfather";
+}
+/*to apply whatever font we want to use, first we should download it and then drag and drop the
+ttf file to the project folder we want and then we should use the @font-face rule to apply it, 
+and then we can use it in the font-family property, the example is in teh 1001font.html and 1001font.css files*/

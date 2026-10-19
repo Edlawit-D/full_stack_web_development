@@ -1,0 +1,125 @@
+/*comment in css*/
+body{
+    background:lightblue;
+    color:black;
+    font-size:10px;
+    font-weight: bolder;
+    /*text-align:center;/*makes everything in the center of the page, but it is 
+    not a good practice to use it for all the elements, it is better to use 
+    it for specific elements like the div container
+    it is used to make the buttons at the center but senior
+    developers freq. use flexbox to do so. and flex box needs the lements that the 
+    change is going to be applied to be in a same container which in this case is 
+    the div container called child, and even though we do not make the text-align center
+    a comment it would be overrighted by the styles applied at the class child.  */
+    margin-top:7px;/*the space between the first element and the browser*/
+    
+}
+.child{
+    display:flex;/*used to make the 
+    container a flex box and also force the elemnts
+    to be inline even though they are in div which 
+    are block containers by default*/
+    justify-content:center;/*used to make the elements at the center of the page*/
+    /*justify-content:start;/*used to make the elements at the left of the page*/
+    /*justify-content:end;/*used to make the elements at the right of the page*/
+    /*justify-content:space-around;/*used to distibute th available space around them*/
+    /*justify-content:space-between;/*used to distibute the available space between them*/
+}
+
+input{
+    width:400px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:24px;/*height refers to the content 
+    of the element and not including the padding or 
+    the border, line-height is nothing but the height 
+    of a line of text which is the same as our input 
+    field which enquires a line of text assuming an 
+    email can not be longer than a line*/
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border:1px solid #dfe1e5;
+    border-radius:24px;
+    margin-bottom:10px;
+}
+.profile{/*its better to have a certain container like div and manage
+     the elements with it instead of having the img manage things,
+     it can make our html code much easier and cleaner, its better cause we may 
+     have to delete the img or replace it with a video like google.com plays with 
+     their logo a lot, but its very generic that it selects all elements with a  
+     div container so to differently select and style the elements, we use classes 
+     as the separate names for the elements with the same container called div,here if we use the collective class .main,
+     it will overtake the classes under it like the ones called child, follow and message which are under it*/
+     /*the following steps  are used to make the img or any other eement at the center of the page*/
+    display:block;
+    width:200px;
+    height:200px;
+    margin-left:auto;/*auto means to take whatever space is available
+    and in this case sing the element is block it can take whatever space 
+    is there at the left and right of the element and divide it equally 
+    to make it at the center, making the right and the left margin auto
+    is usefull when the element is block display, it is not used when the elements are inline
+    because there is no aavailabe space for them to take*/
+    margin-right:auto;
+}
+
+.follow{
+    margin-top:10px;
+    width:200px;
+    display:inline;
+    font-weight: bolder;
+    font-size:15px;
+    border-radius: 40px;
+    background-color:darkgray;
+    margin-right:10px;
+    font-family: 'Courier New',courier, monospace;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.message{
+    margin-top:10px;
+    width:200px;
+    display:inline;
+    font-weight: bolder;
+    font-size:15px;
+    border-radius: 40px;
+    background-color:darkgray;
+    font-family: 'Courier New',courier, monospace;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border:none;
+}
+.details{
+   color:black;  
+   background-color:darkgray;
+   width:400px; /*if not specified 
+   it would take the whole space to the left an right cause its inside 
+   div and divs are block elements by default*/
+   
+   line-height:10px;/*try it with just height and see the difference*/
+   margin-top:10px;
+   margin-left:auto;
+   margin-right:auto;
+   margin-bottom:10px;
+   padding :50px;/*the space inside the element meaning the 
+   content aand the edge of the div which is the container of the content
+   it is a short cut for padding-top, padding-buttom, 
+   padding-left and padding-right, if they have the same value which in this case
+   is 50 px*/
+   border-left: 5px solid black;/*the border is the edge of the element and 
+   it is a short cut for border-top, border-bottom, border-left and 
+   border-right, if they have the same value which in this case is 5px solid black.
+   it is actually the cspace between the margin and the padding*/
+   border:1px solid black;/*looks like border oveertakes boder-left, right, top or bottom if they are specified before it, so if we want to have a border-left of 5px solid black and the rest of the borders to be 1px solid black, we have to specify the border-left after the border*/
+   border-radius: 10px;/*the border radius is the space between the edge of the element and the corner of the element, it is a short cut for border-top-left-radius, border-top-right-radius, border-bottom-left-radius and border-bottom-right-radius, if they have the same value which in this case is 10px*/
+}
+
+

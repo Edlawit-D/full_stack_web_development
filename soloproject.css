@@ -1,0 +1,77 @@
+@fontface{
+    src: url(Ethiopic.ttf);
+    font-family: "Ethiopic";
+}
+body{
+    text-align:center;
+    margin: 0px;
+    font-family:"Ethiopic";
+}
+.main{
+    padding: 200px 0px 0px 0px;
+    color:white;
+    text-shadow: 0px 0px;
+}
+.m{
+    display: inline;
+    /*background:linear-gradient(green,yellow);*/
+    background-color: rgb(25, 120, 152);
+    background-size:cover;
+    /*background-image: url("ethflag.png");
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color:transparent;  this is to water mark the text only with the image we want*/
+}
+.n{
+    background-color: rgb(10, 65, 83);;
+    /*background: linear-gradient(yellow,red);*/
+}
+
+.next{
+    color:white;
+    text-shadow: 0px 0px 5px black;
+    padding:0px 0px 100px 0px;
+}
+.header{
+    background-image: url("Ethiopia.jpg");
+    background-size:cover; 
+    margin:0px 0px 0px 0px;
+}
+
+
+.images{
+    border-radius:50%;
+    width:100px;
+    height:100px;
+}
+.places{
+    margin:0px;
+    padding:0px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.profile{
+    display:flex;
+    width:500px;
+    margin: 0px auto 0px auto;
+    justify-content:space-between;
+    
+}
+#guide{
+    border-radius:20px;
+    width:100px;
+}
+.backgrd{
+    background-color: rgb(25, 120, 152);
+    background-size: cover;
+}
+.background{
+    background-color: rgb(10, 65, 83);
+    background-size: cover;
+
+}
+.fontcolor{
+    color:white;
+    text-shadow: 0px 0px 5px black;
+}

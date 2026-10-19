@@ -1,0 +1,31 @@
+body{
+    background-color:green;
+    text-align:center;
+    font-weight: bolder;
+    color:white;
+    font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /*it is called font stack*/
+}
+h1{
+    color: goldenrod;
+    font-size: 48px;
+    margin-top: 40px;
+}
+p{
+    font-size: 24px;  
+}
+#message-el{
+    font-style:italic;
+}
+button{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color:goldenrod;
+    border:none;
+    color:green;
+    margin-top: 10px;
+    width: 150px;
+    padding: 5px 25px;
+    font-weight:bold;
+    border-radius:2px;
+}

@@ -1,0 +1,77 @@
+body{
+    font-family: "permanent marker", cursive;
+    color: goldenrod;
+    text-align: center;
+    margin:0;
+    font-style: italic;
+}
+h1{
+    text-shadow: 2px 2px black;
+}
+#fightbutton{
+    background-color: goldenrod;
+    color: white;
+    border:none;
+    border-radius:10px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight:bolder;
+    width:200px;
+    padding: 5px 0px;
+}
+#stage{
+   font-size: 128px;
+   margin-bottom:5px;
+}
+#apple{
+    margin-top:20px;
+    background-color: rgb(169, 86, 86);
+}
+#orange{
+    background-color: rgb(235, 121, 28);
+}
+#banana{
+    background-color: rgb(207, 198, 23);
+}
+.fruits{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5px;
+    border-radius: 5px;
+    width:300px;
+    height: 30px;
+}
+#score{
+    background-color: rgb(215, 109, 109);
+    font-weight:bolder;
+    margin:10px;
+    display:block;
+    margin-right:auto;
+    margin-left: auto;
+    border:none;
+    padding:2px 50px 2px 50px;
+}
+#purchase-btn{
+    background-color: rgb(215, 109, 109);
+    font-weight:bolder;
+    margin:10px;
+    display:block;
+    margin-right:auto;
+    margin-left: auto;
+    border:none;
+    padding:10px 150px 10px 150px;
+    color:white;
+    border-radius: 10px;
+}
+#purchase-btn2{
+    background-color: rgb(215, 109, 109);
+    font-weight:bolder;
+    margin:10px;
+    display:block;
+    margin-right:auto;
+    margin-left: auto;
+    border:none;
+    padding:10px 150px 10px 150px;
+    color:white;
+    border-radius: 10px;
+}

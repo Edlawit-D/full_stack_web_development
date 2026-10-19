@@ -1,0 +1,38 @@
+7:14   github and earlly there is how to install github desktop
+commit-officiall records of the changes we make
+push-publish the commits to the github
+
+14:00:00---CLI and GUI
+they are tools with the same action, but CLI is typing the commands atraight to the teminal where as GUI works just bby clicking icons
+we may ask why would we want to write/type commands while we cansimply do it by clicking some icons, this is of three reasons
+1.file management-CLI is more efficient and faster
+2.control development environment- install packages,and dependencies, create virtual environments and handle version control with git...
+3.automating repetitive tasks is way excellent with GUI as a tool--example editting multiple files at the same time
+
+
+1. file management, file tree, create & delete, write& read from files, copy, move and rename files and directories, search and replace, count and organize
+
+section 1
+pwd-print working directory- it shows the current file path we are in but it doesnt show what it contains inside, to have this information we can use;
+    ls-list---which gives/lists us the files that it contains
+cd- used to navigate to a directory or I think directory is just a folder, using this we can navigate from the root directory into another directory
+clear-clears the terminal, just clears the visual claster, no actions are actually stopped
+
+rule of navigation
+like aunts trying to climb a tree, jumping or flying around the branches is not possible, we should use the long way, like wise if we want to access adirectory the same level as another directory we are in, we should first move back to their parent directory and only after the we can access the directory we want, we can move from the directory to the parent directory and then to the directory we want or simply use ../ + the directory name we want to access, .. is used to move back from a diretory and / to enteranother directory
+ls ..---to see the list of the directories and the files of the parent directory while being in one of the children
+ls ../ + directory--gives the lists of the files inside a directory while being in another directory
+cd ../.. --from child to another child, then even go up to another child or go into root directory
+
+to create a file: touch+name.file type, but touch is a Linux/macOS terminal command, and it does not exist by default in Windows PowerShell.for powershell we use Add-Item + file name+.+file type
+to delete: rm(short for remove)+name.file type
+
+to create a directory;mkdir + name of new directory
+to delete a directory;rmdir + name of the directory --only works if the directory is empty if not use rm -r + name of directory
+
+echo + a string in single, or double quotes would make the exact same string returned to the terminal
+
+echo + string + >(redirection operator) + file name we want the string to be returned, would make the string be in the file we have chosen like the "hello" string we put into designedToTeachDir--this is called redirect output, if the redirection file doesnt exist, echo will create that file for us like the one file called hello.txt. It creates the file if there is no such file in teh directory we are in, for example the file trial.txt is created inside the geographyGame folder eventhough ther eis a file in the countries directory. The redirection operator redirects and overwrites all existinng content, but we can use >> indtead of > to redirect therefore we can add another content without losing the existing ones. 
+
+if we want to read from files without opening them, use cat + name of file+.+ type of file
+the command cat can also be used to copy the content of a file to another file cat+file name+>+the name of the file that we want the content to be copied on, >> and < has the same difference here as well as they have had at using echo, also like echo if the file that we want the contents to be copied on does not exist it cretes it first

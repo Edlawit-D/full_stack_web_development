@@ -1,0 +1,115 @@
+body{
+    font-family: "happymonkey", sans-serif;
+    text-align:center;
+    color: #ffffff;
+    background:linear-gradient(rgb(190, 105, 190),pink);/*to create gradient on the color of the background*/
+}
+@font-face {
+    src: url(HappyMonkey-Regular.ttf);
+    font-family: "happymonkey";
+}
+#header{
+    display:flex;
+    flex-direction:column;
+    /*directionu row khone be and row gn beteleyaye column maskemet new 
+    column kehone degmo be and column gn beteleyaye row maskemet new*/
+    align-items: center;
+    /*justify-content and align-items difference:
+justify-content: manages the contents in row, like
+start-at the very left, center-at the center of the row, end- at the very right
+space-around, space-evenly,space-between--are just different ways to use the space in row.
+align-items: manages the contents in column, like
+start-at the very top, center-at the center of the column at the visible page, 
+end- at the very bottom, stretch*/
+}
+.image{
+   border-radius: 50%;
+   width:150px;
+   height: 150px;
+   border:5px solid #EFB0C9;
+
+}
+/*the difference between element, class and id is 
+the frequency we would use the style under them. 
+element- is when we use the html tag like img, or h1--
+it applies for very element with that tag
+class- is when we give a specific class name, and it is used for
+a group of elements with the same class given.and is 
+refered with ". + the name of the class"
+id- is used for only one element, it will apply for a unique
+object, for example if we were to use only one image of the 
+bdy girl here, we would have used id. 
+it is refered with "# + the name of the id"*/
+/*useway.com for contrast test which means how much contrast
+is a dominant color in our site is to the other dominant color*/
+h1, h2, h4{/*group slecter to apply styles on multiple tags in one*/
+    text-shadow: 0px 0px 1px black;
+}
+#bdyage{
+    background:#EFB0C9;
+    border-radius: 2px;
+    margin:15px 0px 2px 0px;
+    padding: 2px 10px;
+} 
+#bdydate{
+    margin-top:4px;
+    background:#EFB0C9;
+    border-radius: 2px;
+}
+.gift-section1{
+    margin-top:50px;
+}
+.giftimg{
+    background-image: url("giftbox.jpg" );
+    height:400px;
+    width:400px;
+    border-radius:10px;
+    background-size:cover;
+    /*at this stage the image is not centered despite the
+    text-align:center; code at the body tag. that is because text-align:center;
+    works only for inline elements and the img is div(block) element.
+    diplay:inline; doesn't work because inline elements can only be as large as the content inside them
+    and there is nothing in div tag*/
+    margin-right:auto;
+    margin-left:auto;
+}
+#giftimg1:hover{/*hover is a psedoclass used to style according to a specific action of the user like hovering*/
+    background-image: url("happy.gif");
+}
+
+#giftimg2:hover{
+    background-image: url("stunning.gif");
+}
+#giftimg3:hover{
+    background-image: url("Ican't.gif");
+}
+#giftimg4:hover{
+    background-image: url("Ican't.gif");
+}
+/*here, from all teh stylings we want only the hovering effect to be unique,
+so by using both class and id in the element we can use class for the same styles while
+using ids for the hi\overing effects*/
+#giftimg5{
+height:200px;/*override the previous one specified on the giftimg tag, the higher the specificity, the higher the priority
+so since id is more specific than class, id styles override class styles*/
+}
+#giftimg5:hover{
+    background-image: url("Ican't.gif");
+}
+.ghint{
+    margin-top:10px;
+}
+.gtitle{
+    margin-bottom:10px
+}
+p{
+    font-style: italic;
+    width:400px;
+    /*since p is a block element we can not apply
+    align center but instead we use margin:auto; */
+    margin:40 auto;
+}
+
+a{
+    color:white;
+}
