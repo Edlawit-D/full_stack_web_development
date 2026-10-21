@@ -65,3 +65,15 @@ const dreamHoliday={
 
 const properties={destination, activity, accomodation, companion} = dreamHoliday//this one is with object destructuring
 console.log(`I would like to go to ${destination} to ${activity}. I'd sleep in a ${accomodation} and hang out with ${companion} all day.`)
+
+
+//set time out with params- I think its like setting a time after which a code will run 
+ function logAnswer(answer, point){
+    console.log(`The answer is ${answer} of the course! If you got it right, give ur self ${point}.`)
+ }
+console.log("what is the capital city of peru?")
+const QuestionTimer=setTimeout(logAnswer, 3000 , "Lima", "10")//the function we want to run is mandatory to pass in, then there is the time set up which is optional and its default value is 0, the time is passed in micro seconds.after it there will be the arguments that the function requires(it can be one or multiple).
+//when we run first the question which is "what is the capital city of peru?" occur then after 3000 microseconds or 3 second the answer (the set time out statement)  
+
+//we can interupt this using;
+  
