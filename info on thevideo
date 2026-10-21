@@ -36,3 +36,8 @@ echo + string + >(redirection operator) + file name we want the string to be ret
 
 if we want to read from files without opening them, use cat + name of file+.+ type of file
 the command cat can also be used to copy the content of a file to another file cat+file name+>+the name of the file that we want the content to be copied on, >> and < has the same difference here as well as they have had at using echo, also like echo if the file that we want the contents to be copied on does not exist it cretes it first
+
+15:00:00--pull request and how to resolve merge conflicts
+
+15:06:00--SSH and GPG keys in github---public key cryptography
+15:08:59---resources to learn abt the keys
