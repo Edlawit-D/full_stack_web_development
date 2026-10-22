@@ -41,3 +41,6 @@ the command cat can also be used to copy the content of a file to another file c
 
 15:06:00--SSH and GPG keys in github---public key cryptography
 15:08:59---resources to learn abt the keys
+
+15:45:22 --- how java processes multiple tasks at the same time even if it is actually .... wchich run one line of code at once before going to the other but The call stack, webAPIs and Task Queue help it even if they are part of the browser and not part of js at all
+

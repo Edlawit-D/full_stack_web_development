@@ -76,8 +76,19 @@ const questionTimer=setTimeout(logAnswer, 3000 , "Lima", "10")//the function we 
 //when we run first the question which is "what is the capital city of peru?" occur then after 3000 microseconds or 3 second the answer (the set time out statement)  
 
 //we can interupt this using;
-const stopButton=document.getElementById("stopSetTimer")
-stopButton.addEventListener('click',function(){
-    clearTimeout(questionTimer)//to indicate which setTimer we want to terminate we entered the argument questionTimer. clearTimeout function
-    console.log("cancelling...")
-})
+//const stopButton=document.getElementById("stopSetTimer")
+//stopButton.addEventListener('click',function(){
+//    clearTimeout(questionTimer)//to indicate which setTimer we want to terminate we entered the argument questionTimer. clearTimeout function
+//    console.log("cancelling...")
+//})
+
+
+//the event loop
+setTimeout(function(){
+    console.log("hi")
+}, 5000)
+console.log("hello")//this will be logged before hi sice there is a timer
+
+
+//import export:named
+//import export:default
