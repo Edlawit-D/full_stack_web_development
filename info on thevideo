@@ -39,13 +39,16 @@ the command cat can also be used to copy the content of a file to another file c
 
 15:00:00--pull request and how to resolve merge conflicts
 if we change something at the browser to resolve conflicts we should do fetch origin then click green button pull origin, and then do the same change at the vscode add and commit it then do git pull origin main or git pull origin branch-name, we pull the branch where we made the changes at the browser.
-and to avoid this kind of conflicts when switching to another branch always do add, commit and push(if u want) any changes u have made  to the curent branch and then do checkout to the branch u want to switch to, and then do git pull origin the branch u are at cause u can pull only the branch u are in, do git merge the other branch and if u didnt push the changes at the first u can push or if u are not ready u can wait un push and do other changed u may want
+and to avoid this kind of conflicts when switching to another branch always do add, commit and push(if u want) any changes u have made  to the curent branch and then do checkout to the branch u want to switch to, and then do git pull origin the branch u are at cause u can pull only the branch u are in and we pull the branch because it will fix if there is any difference with its git browser version, do git merge the other branch and if u didnt push the changes at the first u can push or if u are not ready u can wait un push and do other changed u may want
 
 there are two kinds of merge, merge commit message(default one when merging to the main there exist a message showing at which branch each commit occured, when broser merging thee is a drop down choice at the merge button so choose the merge commit message), the other is squash and merge (which will not show who commited, but just combine all commits to the main, takes all the separate commits you made on a feature branch, squashes them down into one single, clean commit, and then applies that single commit directly onto the main branch, to do it at the vscode do # 1. Switch back to your stable target branch
 git checkout main
 
-also if other branches and main can get the changes just by merging what is the need of push for branches other than the main or other branch that push
-is it a good idea to push only from the main after we merge all the branches while working on big projects and small projects as well
+if there are more branches, the branches better communicate through main branch, its possible for the branches to communicate with each other with out main but having a common branch to communicate to merge and etc is better for bug fixation,and to keep the code stable organized and clean, most developers choose to have a main branch
+
+if we are working on a solo project making changes, add and commit them and then checkout to main branch and puu origin main and merge with the branches and tehn push the changes only from main would be good idea(but commited changes are only available in the same computer and so we cant access it from another device so unless we are planning to finish our work with a computer,we cant get the commited changes just by merging from another computer,pushing recent changes would protect us from losing our files if our pc got lost cause commited changes are only available locally we cant access them out side the computer) but when working as ateam we should first review the work of our teams before mergng so its better the gp members push their respective works, so taht we woukd be able to review, comment and then finally merge it to the main
+
+
 # 2. Merge all changes from your branch into your workspace as one uncommitted block
 git merge --squash text-modification-1
 
