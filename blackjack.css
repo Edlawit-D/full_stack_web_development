@@ -10,6 +10,7 @@ h1{
     font-size: 48px;
     margin-top: 40px;
     font-style:italic;
+    font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /*it is called font stack*/
 }
 p{
     font-size: 24px;  
