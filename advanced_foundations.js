@@ -95,10 +95,61 @@ console.log("hello")//this will be logged before hi sice there is a timer
 
 
 //import export:named- is used when we want to import a data from another file
-import {data} from './datas.js'
+import {data} from './datas.js' //or else we can do import{data as info} fron './data.js' and use info whenever we want to refer it
 console.log(data)
 
 //import export:default
 
 import selectItems from './datas.js'//we can use any name we want since it is default export, but to avoid complexity and ambiguity its better to use same name in all files
 console.log(selectItems(data, 32))
+
+//constructors- gives an object(inbuit-predetermines formats(date, error and otherobjects for each of the datatypes) and all of which has an upper case first letter, custom-design them by our selves for our own purpose)
+
+//the date() constructor- it is used to create a new date object with the current date and time, we can also use it to create a date object with a specific date and time
+const currentDate= new Date()
+console.log(currentDate.toString())//having toString() change it from object into string. it makes it more human readable and the time(clock) will be correct when we do it
+console.log(currentDate.valueOf())//having valueOf() change it from object into number. it makes it more machine readable and the time(clock) will be correct when we do it
+console.log(currentDate.getFullYear())//gives the year only
+console.log(`Copyright ${currentDate.getFullYear().toString()} all rights reserved`)//tis is the text we see at the end of most websites
+//there are packages like luxon used in determining date in js, for luxon, install it with npm install luxon and then import it to the fileand then we can use it with the different ethods it has
+
+//error constructor
+const errors=new Error('error occured')//this is how we create an error object, it is used to create a new error object with a specific message
+console.log(errors.message)
+
+function checkUserName(username){
+    if (username){
+        console.log(username)
+    }
+    else{
+        console.log(new Error('no username entered please enter a username'))
+        throw new Error('username not entered!')
+        //console.log("this will not be logged")//this line will not be logged because the keyword "throw" prevents anyline after it fro being excuted, it is used to throw an error and stop the execution of the code
+    }
+}
+try {
+    checkUserName()
+}
+catch(err){
+    console.log(err.message)
+}
+//the try/catch error makes the not stop running after the throw keyword cause thats what the throw keyword do instead it makes the code work smoothly even after the throw keyword
+//the try/catch statement is used to handle errors in js, it is used to try a block of code and catch any errors that occur in that block of code, it is used to prevent the code from crashing when an error occurs, it is used to handle errors gracefully and provide feedback to the user
+
+//constructors for common data types, which are all built in js, they are used to create new objects with a specific data type, they are used to create new objects with a specific format, they are used to create new objects with a specific behavior, they are used to create new objects with a specific properties and methods
+//they are rarely used except for some methods that Object() gives
+String()
+const str1=new String("hello")
+const str2=new String("hello")
+console.log(typeof(str2))//object
+console.log(typeof(str1+str2))//string- the +changes the elements in the object into string which is their premitive value and then concatenate them
+const str3=new String(str1+str2)//to have their sum in an object
+console.log(str3)
+Number()
+Array()
+Object()
+const obj=new Object() //or else more frequently we use const obj={}
+obj.name="jane"
+obj.age=25
+console.log(obj)
+Boolean()
