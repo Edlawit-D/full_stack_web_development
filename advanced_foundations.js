@@ -22,7 +22,7 @@ console.log(message)
 //switch statements-used when there is multiple possible code blocks we want to execute, it makes the code neater and more redeable than if/else statements
 
 function selectItem(item){
-    price=0
+    let price=0
     switch(item){
         //item === coffee(strict equallity)
         case "coffee":
@@ -50,6 +50,10 @@ console.log(selectItem("biscuits"))
 
 //object destructuring- enables to extract properties from objects into distinct variables
 //hard coding to access the properties in the object would be really hard specially if the properties are many also it violates DRY rule
+let destination=""
+let activity=""
+let accomodation=""
+let companion=""
 const dreamHoliday={
     destination: "Austin, Texas",
     activity: "visit the Tesla HQ",
@@ -90,5 +94,11 @@ setTimeout(function(){
 console.log("hello")//this will be logged before hi sice there is a timer
 
 
-//import export:named
+//import export:named- is used when we want to import a data from another file
+import {data} from './datas.js'
+console.log(data)
+
 //import export:default
+
+import selectItems from './datas.js'//we can use any name we want since it is default export, but to avoid complexity and ambiguity its better to use same name in all files
+console.log(selectItems(data, 32))

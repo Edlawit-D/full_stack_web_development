@@ -270,6 +270,7 @@ let data=[
         score:41
     }
 ]
+
 let scored=document.getElementById("scored")
 let scoreJane=document.getElementById("score")
 scoreJane.addEventListener("click", function(){
