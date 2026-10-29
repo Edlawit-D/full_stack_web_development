@@ -172,4 +172,17 @@ console.log(9_999_999_999_999_008_098n+1n)//we can do arithmetic operations with
 //since operations within big int and normal numbers is not allowed bigint is mostly used for contexts requiring precise handling of large integers like cryptography and databases that use large numbers for identification
 
 
+//Hoisting
+console.log(getNews())
 
+function getNews(){
+    return "A swimming pool has opened in the town center ..."
+}//although this function declared after its envoked, it will be moved to the top (which is before its invoked) so that it can run perfectly, thisis called hoisting  
+//Hoisting also works for variables
+console.log(small)//log out "can not access 'small' before initialization" error for const and let, js knows that its is declared because it is hoisted but it can not access its value if it is not initialized or given value before trying to use, for var its more forgivving that it will just log "undefined" and the other part of the code will just get excuted
+//const small
+//console.log(small)
+//small="very small"
+//it can also be like the above 3 lines
+const small="very small"
+ 
