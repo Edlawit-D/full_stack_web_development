@@ -153,3 +153,23 @@ obj.name="jane"
 obj.age=25
 console.log(obj)
 Boolean()
+
+//pre-increment
+let currentTicketNumber=0
+function getNextTicketNumber(){
+    //return currentTicketNumber++ +1//since ticket numbers starting from 0 are nor logical we have added a plus 1 to the end, or else we can do at the variable definition let currentTicketNumber=1
+    return ++currentTicketNumber //this is what is called preincrement and it basiclly means that the value of the element incremented before it is being used 
+//pre-decremnts would also work and they are like --currentTicketNumber
+}
+console.log(`Guest 1, your ticket number is ${getNextTicketNumber()}`)
+
+//numeric separators
+console.log(9_999_999_999_999_008)//for us to make it clear to undrstand and read we use numeric separatpors in here, this number right here is also the biggest number that can be displayed with correct precision(as an exact number),
+//if we want numbers even bigger that this, we use bigInt
+console.log(9_999_999_999_999_008_098n)//we can make a number big int like this, o else like the one below 
+console.log(BigInt(9_999_999_999_999_008_098))//BigInt is a constructor unlike other constructors, we dont use the keyword new when declaring a value
+console.log(9_999_999_999_999_008_098n+1n)//we can do arithmetic operations with bigInt but we cannot mix it with normal numbers, we have to convert them into bigInt first before we can do any arithmetic operation with them
+//since operations within big int and normal numbers is not allowed bigint is mostly used for contexts requiring precise handling of large integers like cryptography and databases that use large numbers for identification
+
+
+
