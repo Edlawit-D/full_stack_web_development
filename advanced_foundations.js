@@ -93,6 +93,7 @@ setTimeout(function(){
 }, 5000)
 console.log("hello")//this will be logged before hi sice there is a timer
 
+//setTimeout VS setInterval---setTimeout- after how much time should a certain program run, setInterval-the set of interval in which the code will rerun like if it is 5000seconds, the program will run every 5000 seconds, and setTimeout is when we want a certain line or part of code to run after certain time passed after the whole file started running
 
 //import export:named- is used when we want to import a data from another file
 import {data} from './datas.js' //or else we can do import{data as info} fron './data.js' and use info whenever we want to refer it
@@ -179,10 +180,59 @@ function getNews(){
     return "A swimming pool has opened in the town center ..."
 }//although this function declared after its envoked, it will be moved to the top (which is before its invoked) so that it can run perfectly, thisis called hoisting  
 //Hoisting also works for variables
-console.log(small)//log out "can not access 'small' before initialization" error for const and let, js knows that its is declared because it is hoisted but it can not access its value if it is not initialized or given value before trying to use, for var its more forgivving that it will just log "undefined" and the other part of the code will just get excuted
+//console.log(small)//log out "can not access 'small' before initialization" error for const and let=thats becasue the variable exists at temporal dead zone-like few minutes of the early morning where we know who we are but we cant fully function, js knows that its is declared because it is hoisted but it can not access its value if it is not initialized or given value before trying to use, for var its more forgivving that it will just log "undefined" and the other part of the code will just get excuted, It is not the same as when an variable was not declared yet, cause the variables is already declared and js is aware of it but it can not access the value
 //const small
 //console.log(small)
 //small="very small"
 //it can also be like the above 3 lines
-const small="very small"
- 
+const small="very small"//at line (this line-5) there is a line logging small out before it is declared which will return "can not access small before initialization" error which means that the js knows its declared even if its declared later but it cant access it 
+
+
+
+//arrow functions-ultra concise type of function()
+function speedWarning(speed){
+    return `you are going at ${speed} mph!`
+}
+console.log(speedWarning(100))
+
+//the above function can be written more consisely using arrow function
+
+const speeding= (speed) => {
+    return `you are going at ${speed} mph!`
+}
+console.log(speeding(200))
+
+// the last one can alos be written as below which is way more concise
+const speedingg= speed => `you are going at ${speed} mph!`
+console.log(speedingg(300))
+
+//at the above we dont have brackets for the parameter, but when we have 0, 2 or more paraameters we should have one
+const speedinggg= (name,speed) => `Hey ${name} you are going at ${speed} mph!`
+console.log(speedinggg("edl", 400))
+
+//also ther are no {} there but when we want to add some complex logic to our function we need to have  {} and also "return" keyword
+const speedingggg= speed => {
+    if (speed>40){
+        return `you are going at ${speed} mph!`
+    }
+}
+console.log(speedingggg(100))
+
+
+const speedinggggg= (speedLimit, driverSpeed) => {
+    if (driverSpeed>speedLimit){
+        return `you are going at ${driverSpeed} mph! which is greater than the speed limit (${speedLimit})`
+    }
+}
+console.log(speedinggggg(30,40))
+
+
+const distanceTraveledMiles = [267, 345, 234,190, 299]
+const distanceTraveledinkm = distanceTraveledMiles.map(function(distance){
+    return Math.round(distance*1.6)
+})
+console.log(distanceTraveledinkm)
+
+//the above function can be done as follows:
+const distanceTraveledKm = distanceTraveledMiles.map( distance => Math.round(distance*1.6))
+console.log(distanceTraveledKm)
