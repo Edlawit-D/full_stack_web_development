@@ -236,3 +236,44 @@ console.log(distanceTraveledinkm)
 //the above function can be done as follows:
 const distanceTraveledKm = distanceTraveledMiles.map( distance => Math.round(distance*1.6))
 console.log(distanceTraveledKm)
+
+
+
+//reduce() method
+const itemsBoughtArr=[
+    {
+        item:"banana",
+        price:10
+    },
+    {
+        item:"apple",
+        price:20
+    },
+    {
+        item:"pineapple",
+        price:30
+    },
+    {
+        item:"watemellon",
+        price:40
+    }
+]
+
+function calculateTotalPrice(itemsBoughtArr,discount){
+    const total=itemsBoughtArr.reduce((total, currentItem) =>//total is the value gained from previous iterations and currentItem refers to the value we are entering into
+        total+currentItem.price, 0//0 is the initial value for current item
+)
+return  total-discount}
+console.log(calculateTotalPrice(itemsBoughtArr,10))
+
+
+//what happens to a parameter that we have used on our logic but we didnt give the value of it when calling the function, for example what if we dont give the value for discount when calling the function calculateTotalPrice, it will say NaN or null which is not right
+function calculateTotalPrices(itemsBoughtArr,discount,tax = 0){//we can also use default params as we did to the third parameter which is tax or else we can use the following logic, default params are used only when there is no value entered
+    if(!discount){
+        discount=0
+    }
+    const total=itemsBoughtArr.reduce((total, currentItem) =>//total is the value gained from previous iterations and currentItem refers to the value we are entering into
+        total+currentItem.price, 0//0 is the initial value for current item
+)
+return  total-discount+(total*tax)}
+console.log(calculateTotalPrices(itemsBoughtArr))
