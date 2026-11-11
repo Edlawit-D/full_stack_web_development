@@ -268,7 +268,7 @@ console.log(calculateTotalPrice(itemsBoughtArr,10))
 
 
 //what happens to a parameter that we have used on our logic but we didnt give the value of it when calling the function, for example what if we dont give the value for discount when calling the function calculateTotalPrice, it will say NaN or null which is not right
-function calculateTotalPrices(itemsBoughtArr,discount,tax = 0){//we can also use default params as we did to the third parameter which is tax or else we can use the following logic, default params are used only when there is no value entered
+function calculateTotalPrices(itemsBoughtArr,discount,tax = 0){//we can also use default params as we did to the third parameter which is tax or else we can use the following logic, default params are used only when there is no value entered, default params can be used for default numbers, strings, arrays, functions...
     if(!discount){
         discount=0
     }
@@ -277,3 +277,22 @@ function calculateTotalPrices(itemsBoughtArr,discount,tax = 0){//we can also use
 )
 return  total-discount+(total*tax)}
 console.log(calculateTotalPrices(itemsBoughtArr))
+
+//the rest parameter-way of catching the rest of the parameters-if there is the same thing we want to happen to the rest of the arguments in a method
+function setPermissionLevel(permissionLevel, name1,name2){
+    console.log(`${name1} has get ${permissionLevel}`)
+    console.log(`${name2} has get ${permissionLevel}`)
+}
+setPermissionLevel("admin","abebe","kebede")
+//here we want the same thing happen to name1 and name 2 but we hard coded them which is a bad habit and would throw a messs to our code specially if we want the same thing happen for multiple more objects, insteed using the rest parameters would do the work in much less easy and clear way
+
+function setPermissionLevels(permissionLevel,...names){//the ...names parameter can only be at the end cause it refers to the other remaining parameters(other wise there will be"rest parameter must be last formal parameter" error text), also there can only one rest parameter in a method
+    console.log(names)//an array of the the names we have entered as arguments will show up, thats why we hae used forEach() method right here
+    names.forEach((name) => (
+         console.log(`${name} has got ${permissionLevel} permission.` )   
+
+    ))
+}
+setPermissionLevels("admin","abebe","kebede")
+
+//the rest parameter challenge at restParamterChallenge.html,restParamterChallenge.css and restParamterChallenge.js 
