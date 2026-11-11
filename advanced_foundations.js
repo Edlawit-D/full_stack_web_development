@@ -296,3 +296,19 @@ function setPermissionLevels(permissionLevel,...names){//the ...names parameter 
 setPermissionLevels("admin","abebe","kebede")
 
 //the rest parameter challenge at restParamterChallenge.html,restParamterChallenge.css and restParamterChallenge.js 
+
+
+//callback functions-functions that are called inside other functions, we use them in array functions(map(), forEach(), reduce()), asyncronious method(setTimeout(), setInterval()),event listeners and also we can cretae outr own functions that use callback functions
+function notifyUser(userNotification){
+    userNotification()
+}
+const emailUserNotification=()=>{
+    console.log("your email has received!")
+}
+const txtUserNotification=()=>{
+    console.log("your text has received!")
+}
+notifyUser(emailUserNotification)
+notifyUser(txtUserNotification)
+//here the two methods emailUserNotification and txtUserNotification are call back functions
+

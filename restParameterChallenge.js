@@ -2,7 +2,7 @@ function getLebelsHtml(text, sender, ...levelnames){
     //names.forEach((name) => {
         //console.log("dear " +name.name+ " " + text + " from " + sender)
     //})
-    const labels = levelnames.map((levelname) => (
+    const labels = levelnames.map((levelname) => (//map() methods returns another array so we can either give the value for another variable as it is right here or we can just return it
       //   return "dear " +name.name+ " " + text + " from " + sender
     //
     `<div class="levelsCard">
