@@ -310,5 +310,6 @@ const txtUserNotification=()=>{
 }
 notifyUser(emailUserNotification)
 notifyUser(txtUserNotification)
-//here the two methods emailUserNotification and txtUserNotification are call back functions
+//here(above) the two methods emailUserNotification and txtUserNotification are call back functions
 
+//super challenge real state is in superChallengeRealState.html, superChallengeRealState.css, superChallengeRealState.js, propertyForsale.js, placeholderProperty.js

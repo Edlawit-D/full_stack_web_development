@@ -1,0 +1,21 @@
+.properties{
+    display:flex;
+    margin:20px;;
+    padding: 10px;
+}
+#content{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    height:200px;
+    width:100%;
+    padding:0px 10px 0px 10px;
+    padding-left:30px;
+}
+#h1{
+    font-weight: bolder;
+}
+#price{
+    font-weight: bolder;
+}
+#area{
+    font-weight: bolder;
+}
