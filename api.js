@@ -104,3 +104,33 @@ async function fetchPost(){
     }
 }
 fetchPost()
+
+//JSON placeholder-not only aceessing data from the server but also uploading to it as well
+//methods(different requests in JSON placeholder)-GET(getting data),POST(postig data),PUT(updating data-but we may also use post depending on the api we use),DELETE(deleting data),PATCH and OPTIONS--its a convention to make the methods written in capital
+//when we do fetch, GET is the default method so we dont need to pass GET in methos as a value
+async function createPost(){
+    try{
+        const post=await fetch('https://apis.scrimba.com/jsonplaceholder/posts', {
+            method:'POST',
+            body:JSON.stringify({
+                title: "Holiday NightMares",
+                body:"when I was kidnapped in scotland...",
+                userId:4703,
+            }),//json placeholder dont actually put our data to the server but its like simulation, when we try this one even though it is not put to the server we will get a confirmation text of the id(the id returned to the console)
+            headers:{
+                "Content-Type":"application/json"
+            }//headers give more details on what we are uploading to the server-here the title,body,userId,and id will be logged out otthe console
+        })
+        if (!post.ok){
+            throw new Error("failure to access the data!")
+        }
+        const postJson=await post.json()
+        console.log(postJson)
+    }
+    catch(error){
+        console.log(error)//if we want different error messages for different errors we can have an if/else clause in the catch block(here), other wise the erro created at the if/else clause above will get excuted when we log error, cause the if clause at the above can notice bothe the baseURL an dthe end point errors(since both cases make post.ok===false)
+    }
+}
+createPost()
+//0910587739-omi great run
+//how to update a resource in api-we can use put(to update all the parts) or patch(to update only part of the resource)
