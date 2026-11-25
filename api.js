@@ -77,7 +77,7 @@ fetchDog()
 //try/ catch and catch are used to catch errors(happening because of the base URL(which is the first part of a link which is not changed when we want a different category or type), network errors and other unexpected issues-this is like no link is found with that name), but there may be a mistake specially typing mistake in end point(the part of the link after the base URL which gets changed, its like different categories found in a baseURL-there will be no error but there will be a failure, there will be the link returned but with status:'error',these are not errors they are just failures so they are not catched by the try/catch, but there is a .ok attribute(bullean value) to the variable where the fetch is put into which in this case 'dog'--the failure is like there is this main part(base URL) but not with this category)
 async function fetchDogg(){
     try{
-        const dog=await fetch("https://apis.scrimba.com/dog.ceo/api/breeds/images/random")//here I have changed the endpoint of the link(image to images)
+        const dog=await fetch("https://apis.scrimba.com/dog.ceo/api/breeds/image/random")//here I have changed the endpoint of the link(image to images)
         if (!(dog.ok)){
             throw new Error('There was a problem with the API')//here the new variable called error is created but this will be picked by the catch() clause and get logged out
         }
@@ -119,7 +119,7 @@ async function createPost(){
             }),//json placeholder dont actually put our data to the server but its like simulation, when we try this one even though it is not put to the server we will get a confirmation text of the id(the id returned to the console)
             headers:{
                 "Content-Type":"application/json"
-            }//headers give more details on what we are uploading to the server-here the title,body,userId,and id will be logged out otthe console
+            }//headers give more details on what we are uploading to the server-here the title,body,userId,and id=101 will be logged out on the console
         })
         if (!post.ok){
             throw new Error("failure to access the data!")
@@ -134,3 +134,116 @@ async function createPost(){
 createPost()
 //0910587739-omi great run
 //how to update a resource in api-we can use put(to update all the parts) or patch(to update only part of the resource)
+
+
+//promise constructor
+const promise= new Promise((resolve, reject) => {
+    const success=Math.random() > 0.5
+    if(success){
+        resolve("premise resolved operation successful!!!")
+    } else {
+        reject("premise rejected operation failed!!!")
+    }
+})
+promise.then(response => console.log(response))
+
+try {
+    const response= await promise
+    console.log(response)
+} catch(err){
+    console.log(err)
+}
+
+//promise challenge
+
+async function preLoadeImg(url){
+    return new Promise((resolve,reject)=>{
+        const img =new Image()
+        img.src=url
+        img.alt="A random dog"
+        img.addEventListener('load',()=> resolve(img))
+        img.addEventListener('error', ()=> reject('image has not loaded'))
+    })
+}
+try{
+    //first we should fetch the url or the the link and then convert it into a js usabble format, and then after that extract the real img link not a json link or else we could use a jpg file it self or the direct images address or webp page so that there would be no need for extraction of the image link
+    const link= await fetch("https://apis.scrimba.com/dog.ceo/api/breeds/image/random")
+    if (!link.ok){
+        console.error("error on the end point of the link provided")
+    }
+    const realLink= await link.json()
+    const results = await preLoadeImg(realLink.message)
+    console.log(results)
+    document.getElementById("img-container").appendChild(results)
+    }
+catch (error){
+    console.error("Error: can not fetch the image  resource")
+    }
+
+
+//how using promises help escape callback hell
+function uploadFile(){
+    return new Promise((resolve,reject)=>{
+        console.log('step 1: Uploading file ...')
+        setTimeout(() =>{
+        resolve()}, 1000)
+    })
+//what is callback function and what do we mean when we say to add a callback function to the promise constructor
+// A function passed as an argument into another function so it can be executed later. For example, in setTimeout(() => { resolve(); }, 1000), the arrow function () => { resolve(); } is a callback that runs after 1,000 milliseconds.
+}
+function processFile(){
+    return new Promise((resolve,reject)=>{
+        console.log('step 2: processing file ...')
+        setTimeout(() =>{
+            resolve()}, 1000)
+        })
+}
+function notifyUser(){
+    return new Promise((resolve, reject)=>{
+        console.log('step 3: Notifying user ...')
+        setTimeout(() =>{
+            resolve()}, 1000)
+    })
+}
+
+try{
+    await uploadFile()
+    await processFile()
+    await notifyUser()
+}
+catch(error){
+    console.error('error occured')
+}
+finally{
+    console.log("operation completed!")
+}
+
+
+//instead of the try catch above we could do the following and not use promises
+function uploadFil(callback) {
+    console.log("step 1: Uploading file ...");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+function processFil(callback) {
+    console.log("step 2: processing file ...");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+function notifyUse(callback) {
+    console.log("step 3: Notifying user ...");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+
+uploadFil(()=>
+    processFil(()=>
+        notifyUse(()=>
+            console.log("operation completed!")
+        )
+    )
+)
+//using promises with try/catch is more easier, clearer to use specially  when the code is much bigger and the functions be a lot
