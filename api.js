@@ -48,7 +48,7 @@ async function getBoredActivity() {
 }
 getBoredActivity();
 //promises are used to handle asynchronous operations in JavaScript, they represent a value that may be available now, or in the future, or never.
-//promises have three states: pending, fulfilled, and rejected. A promise is pending when it is created and has not yet been resolved or rejected. A promise is fulfilled when it has been resolved successfully and has a value. A promise is rejected when it has been rejected with an error. Promises can be chained together using the .then() method, which allows us to handle the resolved value of a promise and return a new promise. Promises can also be handled using the async/await syntax, which allows us to write asynchronous code in a synchronous manner.
+//promises have three states: pending, fulfilled, and rejected. A promise is pending when it is created and has not yet been resolved or rejected. A promise is fulfilled when it has been resolved successfully and has a value. A promise is rejected when it has been rejected with an error. Promises can be chained together using the .then() method, which allows us to handle the resolved value of a promise and return a new promise. Promises can also be handled using the async/await syntax, which allows us to write asynchronous code in a synchronous manner(It means your code runs asynchronously in the background (without freezing the browser), while being written in a clean, top-to-bottom order that looks just like regular line-by-line synchronous code.)
 //if I omit the "await" at the second .then, the data will be a promise object instead of the actual data, and I will not be able to access the properties of the data object directly. I will have to use another .then() method to handle the promise and access the data.
 
 //async adn await are used to handle asynchronous operations in JavaScript, they allow us to write asynchronous code in a synchronous manner, they make our code easier to read and understand, they allow us to use try/catch blocks to handle errors, they allow us to use the await keyword to wait for a promise to resolve before continuing with the execution of the code, they allow us to use the async keyword to define a function that returns a promise, they allow us to use the await keyword inside an async function to wait for a promise to resolve before continuing with the execution of the code, they allow us to use the await keyword outside of an async function by wrapping it in an immediately invoked function expression (IIFE) or by using top-level await in modules.
@@ -70,7 +70,7 @@ fetchDog()
 
 //in both async/await and fetch/then, we can use the same variables in them like (response and data), because they create they own scope so there will be no error when we define the same variables again and again(even though they are same, theyare in differeent scope)
 
-//the reason why we use try/catch for async/await and catch for fetch/then is that if we use try/catch for fetch/then, try/catch is way faster than fetch/then so that it will get excuted faster and when the error happens later the program is already out of try/catch so the errorwill not be caught and t will throw an error, but catch is attached to the direct premise so it will wait for the premise to be rejected so if it is, it will catch it.
+//the reason why we use try/catch for async/await and catch for fetch/then is that if we use try/catch for fetch/then, try/catch is way faster than fetch/then so that it will get excuted faster and when the error happens later the program is already out of try/catch so the errorwill not be caught and it will throw an error, but catch is attached to the direct premise so it will wait for the premise to be rejected so if it is, it will catch it.
 //for async/await the main purpose of await is to make the the code wait until the promise is resolved or rejected, so that thr try/catch will wait for the premise while other code other than the try/catch will be excuted and wehn the proise gets resolved or rejected the try catch will run accordingly.
 
 
@@ -247,3 +247,45 @@ uploadFil(()=>
     )
 )
 //using promises with try/catch is more easier, clearer to use specially  when the code is much bigger and the functions be a lot
+
+
+//how to handle multiple promises all at once
+//the output of Promise.all is array of resolved promises, if even one of the promises is rejected it will not get excuted
+
+//super challenge
+function getImagePromise(url){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            const img=new Image()
+            img.src=url
+            img.alt='scenic image'
+            img.addEventListener('load', () => resolve(img))
+            img.addEventListener('error', () => reject(new Error("failed to load the images!")))
+        }, 500)
+    })
+}
+
+const images=[
+    'https://scrimba.com/links/advancedjs-resources-images-scenic1',
+    'https://scrimba.com/links/advancedjs-resources-images-scenic2',
+    'https://scrimba.com/links/advancedjs-resources-images-scenic3'
+]
+
+async function preLoadImages(imageUrlArr){
+    const imgContainer=document.getElementById('img-containing')
+    const uploadContainer=document.getElementById('upload-container')
+    try{
+        const promise1=getImagePromise(imageUrlArr[0])
+        const promise2=getImagePromise(imageUrlArr[1])
+        const promise3=getImagePromise(imageUrlArr[2])
+        const promises= await Promise.all([promise1,promise2,promise3])//since Promise.all has the output of resolved proises, if one of the promises are not right or rejected, error will be catch and error message will be returned
+        //const promises= imageUrlArr.map((url)=> getImagePromise(url))   const results= await Promise.all(promises) === the ABOVE 4 LINES OF CODE
+        uploadContainer.style.display='none'
+        promises.forEach ((img)=> imgContainer.appendChild(img))
+        console.log("All images loaded successfully!!!")
+    }
+    catch(error){
+        console.error("error while fetching the imags in the array")
+    }
+}
+document.getElementById("submit-button").addEventListener('click',()=>preLoadImages(images))
