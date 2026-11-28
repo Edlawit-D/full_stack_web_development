@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    padding-bottom: 60px; /* Prevents the fixed footer from covering your report on phones */
+}
+#header{
+    color:white;
+    background-color:black;
+    display:flex;
+    flex-direction:column;
+}
+#header-part{
+    display:flex;
+    margin:0 auto;
+    font-size: clamp(1.6rem, 6vw, 2.5rem); /* Scales cleanly on narrow phones */
+}
+#order{
+    margin-top:40% auto 15px auto;
+    max-width:90%;
+    line-height:1.4;
+}
+#input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    font-size: 16px; /* Stops iPhones from auto-zooming when tapping the input */
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 0;
+}
+#plus{
+    padding: 8px 20px;
+    border:2px solid black;
+    font-size: 16px;
+    font-weight: bolder;
+    margin:15px 0px;
+    cursor:pointer;
+}
+#tickers-apear{
+    margin:15px;
+}
+#generate{
+    margin:15px;
+    border:none;
+    background-color:rgb(147, 211, 50);
+    color:black;
+    font-weight:bolder;
+    padding:10px 30px;
+    font-size:16px;
+    cursor:pointer;
+}
+#generate:disabled{
+    margin:15px;
+    border:none;
+    background-color:rgb(147, 211, 50);
+    color:rgb(238, 227, 227);
+    font-weight:bolder;
+    padding:10px 30px;
+    cursor:not-allowed;
+}
+#notice{
+    font-style:italic;
+    font-weight:bolder;
+}
+#sitefooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  margin:0;
+  background-color:black;
+  color: #cbd5e1;
+  text-align: center;
+}
+#loading-area {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;             /* Fixed compact height so it never pushes text behind the footer */
+    background-color: #ebebeb;
+    gap: 15px;
+    padding: 20px;
+}
+
+#loading-area img {
+    width: 70px !important;    /* Forces the spinner image to stay small on desktop AND mobile */
+    height: 70px !important;
+    min-height: 0 !important;  /* Overrides any earlier min-height rule */
+}
+
+#apimessage {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Mobile-friendly report box */
+#output-area {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    border: 2px solid black;
+    width: 100%;
+    margin: 30px auto;
+    padding: 16px;
+    line-height: 1.5;
+}
+

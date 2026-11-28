@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--this would make the website compatible with phone-->
+    <title>Document</title>
+    <link rel="stylesheet" href="aiEngineering.css">
+</head>
+<body>
+    <div id="header">
+        <div id="header-part"><h1>Dodgy</h1><img src="imgAI.png"><h1>Dave's</h1></div>
+        <h3>Stock Predictions</h3>
+    </div>
+    <div id="body">
+        <p id="order">Add upto 3 stock tickers below to get a super accurate stock prediction report 👇</p>
+        <form id="submit-stock">
+        <input id="input" type="text" placeholder="MSFT"><button id="plus"> + </button>
+        </form>
+        <p id="tickers-apear">Your tickers will apear here...</p>
+        <p id="tickers"></p>
+        <button id="generate">GENERATE REPORT</button>
+        <p id="notice"> Always correct 15% of time!</p>
+    </div>
+    <div id="loading-area">
+        <img src="loading.gif" alt="loading gif" width="100%">
+        <p id="apimessage"></p>
+        <p id="loading"></p>
+    </div>
+    <div id="output-area"><h2>Your Report 😜</h2></div>
+    <footer><p id="sitefooter">©️ This is not real financial advice!</p></footer>
+    <script src="aiEngineering.js" type="module"></script>
+</body>
+</html>
